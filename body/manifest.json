@@ -1,0 +1,27 @@
+{
+     "manifest_version":2,
+     "name":"MemriseLeaderboard",
+     "version":"0.1",
+     "content_scripts":[
+           {
+               "matches":[
+                 "<all_urls>"
+               ],
+               "js":["memrise.js"]
+           }
+     ],
+     "permissions":[
+"tabs","storage","notifications" ,"https://*.memrise.com/","cookies","alarms","https://*/","https://www.memrise.com/home/leaderboard/","https://www.memrise.com/ajax/leaderboard/mempals/?period=week&how_many=100"
+     ],
+     "background":
+     {
+        "persistent": true,
+           "scripts": ["background.js"]
+     }
+ ,
+     "browser_action": {
+        "default_icon": "ms.png",
+        "default_popup": "popup.html",
+        "default_title": "leaderboard"
+  }
+}
